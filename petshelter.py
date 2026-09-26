@@ -1,7 +1,18 @@
 pet_list=[]
 
+# functions
 def add_pet(name, type, status):
-    pass
+    while True:
+        name = input("Name of pet: ")
+        type = input("Type of pet: ")
+        status = input("Available / Adopted: ")
+
+        if name and type and status != "":
+            pet_list.append({"name": name, "type": type, "status": status})
+            print("Added successfully!")
+            break
+        elif name or type or status == "":
+            print("All questions should be answered!")
 
 def view_pets():
     for item in pet_list:
